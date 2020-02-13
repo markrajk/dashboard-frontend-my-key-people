@@ -22,9 +22,17 @@ $red-gradient: linear-gradient(#FA2020, #EF0049);
 
 html {
     font-size: 62.5%;
-    @include respond(desktop-xl) {
-        font-size: 55%;
-    }
+  @include respond(desktop-xxl) {
+    font-size: 58%;
+  }
+
+  @include respond(desktop-xl) {
+    font-size: 53%;
+  }
+
+  @include respond(desktop-md) {
+    font-size: 48%;
+  }
 }
 
 body {

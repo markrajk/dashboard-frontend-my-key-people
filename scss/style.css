@@ -1,14 +1,8 @@
 html {
   font-size: 62.5%; }
-  @media (max-width: 1800px) {
-    html {
-      font-size: 58%; } }
   @media (max-width: 1500px) {
     html {
-      font-size: 53%; } }
-  @media (max-width: 991px) {
-    html {
-      font-size: 48%; } }
+      font-size: 55%; } }
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -283,3 +277,5 @@ body {
       color: #2C2F34; }
       .results .improvement .list-group-item p {
         width: 100%; }
+
+/*# sourceMappingURL=style.css.map */
