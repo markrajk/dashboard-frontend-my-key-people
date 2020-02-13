@@ -14,55 +14,61 @@
 <body>
     <main class="d-flex">
     <!-- SIDEBAR SECTION -->
-    <div class="sidebar card bg-white shadow">
-        <div class="card-body p-5">
-            <div class="profile d-flex align-items-center">
-                <img class="rounded-circle" src="img/profile-pic.png" alt="">
-                <div class="profile-info ml-3">
-                    <h4>Andrew <span class="align-middle"></span></h4>
-                    <p class="text-muted m-0">Boss</p>
-                </div>
-            </div>
-
-            <div class="sidebar-group pt-3">
-                <h4 class="text-muted font-weight-bold">GIVE FEEDBACK</h4>
-                <select class="custom-select mt-2">
-                    <option selected>To your people</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                </select>
-            </div>
-
-            <div class="sidebar-group pt-3">
-                <h4 class="text-muted font-weight-bold">TEAMS</h4>
-                <ul class="list-unstyled">
-                    <li><a href="#">Results</a></li>
-                    <li><a href="#">Export results</a></li>
-                    <li><a href="#">Manage teams</a></li>
-                    <li><a href="#">Create new team</a></li>
-                </ul>
-            </div>
-
-            <div class="sidebar-group pt-3">
-                <h4 class="text-muted font-weight-bold">PEOPLE</h4>
-                <ul class="list-unstyled">
-                    <li><a href="#">Results</a></li>
-                    <li><a href="#">Export results</a></li>
-                    <li><a href="#">Manage people</a></li>
-                    <li><a href="#">Invite new people</a></li>
-                </ul>
-            </div>
-
-            <div class="sidebar-group pt-3">
-                <h4 class="text-muted font-weight-bold">Me</h4>
-                <ul class="list-unstyled">
-                    <li><a href="#">Results</a></li>
-                    <li><a href="#">My account</a></li>
-                </ul>
-            </div>
+   <!-- SIDEBAR SECTION-->
+   <div class="sidebar d-flex flex-column bg-white">
+    <div class="sidebar-info d-flex align-items-center">
+        <img class="sidebar-info-img" src="img/profile-pic.png" alt="profile picture">
+        <div class="d-flex flex-column">
+            <p class="sidebar-info-name m-0">Andrew<span class="align-middle"></span></p>
+            <p class="sidebar-info-title m-0">Boss</p>
         </div>
     </div>
+
+    <div class="sidebar-group">
+        <h3>GIVE FEEDBACK</h3>
+        <select name="sidebar-select" id="sidebar-select">
+            <option value="one">To you people</option>
+        </select>
+    </div>
+
+    <div class="sidebar-body">
+        <div class="sidebar-group">
+            <h3>TEAMS</h3>
+            <ul class="list-unstyled">
+                <li><a href="#">Results </a></li>
+                <li><a href="#">Export results </a></li>
+                <li><a href="#">Manage teams </a></li>
+                <li><a href="#">Create a new team </a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-group">
+            <h3>PEOPLE</h3>
+            <ul class="list-unstyled">
+                <li><a href="#">Results </a></li>
+                <li><a href="#">Export results </a></li>
+                <li class="active"><a href="#">Manage people</a></li>
+                <li><a href="#">Invite new people </a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-group">
+            <h3>ME</h3>
+            <ul class="list-unstyled">
+                <li><a href="#">Results </a></li>
+                <li><a href="#">My account </a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-group">
+            <h3>ADMIN</h3>
+            <ul class="list-unstyled">
+                <li><a href="#">User/team register </a></li>
+                <li><a href="#">Company Profile </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
 
     <!-- RESULTS SECTION -->
     <div class="results w-100 px-5 mr-3">
@@ -75,7 +81,7 @@
             <p class="choose mb-4"><span>My key people |</span> All people</p>
         </div>
 
-        <div class="results-body h-100 pb-2">
+        <div class="results-body pb-2">
             <div class="row h-100">
                 <!-- PEOPLE CARD -->
                 <div class="col-6 h-100">
@@ -175,7 +181,7 @@
                         <div class="col-12 h-100">
                             <div class="card card-body development bg-white">
                                 <div class=" development-header d-flex justify-content-between align-items-center">
-                                    <h3><span>Jess Gregory's</span> Development</h3>
+                                    <h3 class="text-truncate mr-5"><span>Jess Gregory's</span> Development</h3>
                                     <a href="#">Share<i class="material-icons md-18 align-middle">keyboard_arrow_down</i></a>
                                 </div>
                                 <p class="choose"><span>Months |</span> Weeks</p>
