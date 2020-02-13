@@ -6,6 +6,9 @@ $red-gradient: linear-gradient(#FA2020, #EF0049);
     @if $breakpoint == desktop-sm {
         @media (max-width: 767px) { @content };
     }
+    @if $breakpoint == tablet {
+        @media (max-width: 850) { @content };
+    }
     @if $breakpoint == desktop-md {
         @media (max-width: 991px) { @content };
     }
@@ -19,6 +22,33 @@ $red-gradient: linear-gradient(#FA2020, #EF0049);
         @media (max-width: 1800px) { @content };
     }
 }
+
+@mixin respond-v($breakpoint) {
+    @if $breakpoint == desktop-xsm {
+        @media (max-height: 600px) { @content };
+    }
+    @if $breakpoint == desktop-sm {
+        @media (max-height: 750px) { @content };
+    }
+    @if $breakpoint == desktop-md {
+        @media (max-height: 991px) { @content };
+    }
+    @if $breakpoint == desktop-lg {
+        @media (max-height: 1199px) { @content };
+    }
+    @if $breakpoint == desktop-xl {
+        @media (max-height: 1500px) { @content };
+    }
+    @if $breakpoint == desktop-xxl {
+        @media (max-height: 1800px) { @content };
+    }
+}
+
+@function resize($base) {
+    $result: $base * .9;
+    @return $result;
+  }
+
 
 html {
     font-size: 62.5%;
@@ -35,10 +65,6 @@ html {
   }
 }
 
-@function resize($base) {
-    $result: $base * .9;
-    @return $result;
-  }
 
 body {
     font-family: 'Open Sans', sans-serif;
@@ -196,7 +222,8 @@ body {
 
     //PEOPLE CARD
     .people {
-        height: 100%!important;
+        max-height: 100%!important;
+        margin-right: 2%;
 
         & .card-header {
             padding: 2.3rem;
@@ -302,12 +329,15 @@ body {
         }
     }
 
+
     // GRAPH CARD
     & .development {
+
         padding: 2rem;
         //height: 98%!important;
-        height: 98%!important;
+        height: 99%!important;
         margin-bottom: 1%;
+
         &-header {
             margin-bottom: 0;
             & h3 {
@@ -406,11 +436,27 @@ body {
 
     // IMPROVEMENT CARD
     & .improvement {
+        //display: none;
+      
+        align-items: center;
         margin-top: 1%!important;
-        height: 98%!important;
+        height: 99%!important;
+
+        // @include respond-v(desktop-sm) {
+        //     display: none;
+        // }
 
         &-header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
             padding: 2.5rem 2rem;
+
+            @include respond-v(desktop-sm) {
+                display: none;
+                background-color: red;
+            }
+
             & h3 {
                 font-size: 1.9rem;
                 font-weight: 700;
@@ -431,6 +477,7 @@ body {
             overflow-x: hidden;
             -ms-overflow-style: none;  /* Internet Explorer 10+ */
             scrollbar-width: none;  /* Firefox */
+            max-height: 32.15vh;
 
             &::-webkit-scrollbar { 
                 display: none;  /* Safari and Chrome */
@@ -441,6 +488,7 @@ body {
             padding: 1.5rem 2rem;
             font-size: 1.4rem;
             color: #2C2F34;
+           
 
            
 
@@ -458,6 +506,30 @@ body {
         }
     }
 }
+
+.development-row {
+    height: 50%;
+
+    @include respond-v(desktop-sm) {
+        height: calc(50% + 8.8vh);
+    }
+
+    @include respond-v(desktop-xsm) {
+        height: 100%;
+    }
+    
+
+}
+
+.improvement-row {
+    @include respond-v(desktop-xm) {
+        max-height: 50%important;
+    }
+    @include respond-v(desktop-xsm) {
+        display: none;
+    }
+}
+
 
 
 
